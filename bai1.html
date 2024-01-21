@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+function findMaxLength(str){
+    let maxLength = 0;
+    let maxWord =[];
+    let words = str.split(' ');
+    for(let i=0;i<words.length;i++){
+        if(words[i].length>maxLength){
+            maxLength = words[i].length;
+            maxWord=[words[i],words[i].length]; 
+        }
+    }
+    return maxWord;
+}
+let myStr = "Le Dien Tiennn";
+let count = findMaxLength(myStr);
+console.log(count);
+</script>
+</html>

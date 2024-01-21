@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>    function chunkArrayInGroups(arr, n) {
+  if (!Number.isInteger(n) || n <= 0 || !Array.isArray(arr)) {
+    return "So nhap ko hop le";
+  }
+  let result = [];
+  let i = 0;
+  while (i < arr.length) {
+    result.push(arr.slice(i, i + n));
+    i += n;
+  }
+  return result;
+}
+let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+let result = chunkArrayInGroups(arr, 3);
+console.log(result);
+</script>
+</html>

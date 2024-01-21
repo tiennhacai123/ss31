@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function fakeReduce(arr, callback, initialValue) {
+  if (!Array.isArray(arr) || typeof callback !== 'function') {
+    return "So nhap khong hop le";
+  }
+  const hasInitialValue = arguments.length > 2;
+  let accumulator = hasInitialValue ? initialValue : arr[0];
+  for (let i = hasInitialValue ? 0 : 1; i < arr.length; i++) {
+    accumulator = callback(accumulator, arr[i], i, arr);
+  }
+  return accumulator;
+}
+const result = fakeReduce([1, 2, 3, 4, 5], function (accumulator, currentValue) {
+  return accumulator + currentValue;
+}, 0);
+console.log(result);
+</script>
+</html>
